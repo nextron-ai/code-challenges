@@ -1,0 +1,10 @@
+1. Crie uma lógica para extrair as seguintes informações das imagens presentes na pasta (img1.png e img2.png):
+    - Nome
+    - CNPJ
+    - Vencimento
+    - Total a pagar
+
+Observações:
+    - Você deve retornar esses dados em um arquivo .json
+    - Você deve criar uma lógica genérica que funcione para as duas imagens
+    - Deixamos o "easyocr" preparado para uso, mas fique a vontade para utilizar outras ferramentas
