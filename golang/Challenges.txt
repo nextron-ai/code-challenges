@@ -1,11 +1,15 @@
+1.  Crie uma migration para criar a entidade/tabela Medições (Measurements) baseado nos dados do arquivo "data/data.go".
+    - Entenda os dados de cada entidade e a relação entre elas.
+    - Você pode utilizar a migration v1 como exemplo.
+    - Para criar uma migration, crie um novo arquivo ".sql" dentro de "migrations/sql" com a instrução a ser executada.
+    - O nome do arquivo deve seguir o número de versão: v1, v2, v3...
+
 1.  Crie as "models" para as Usinas (Power Plants) e Medições (Measurements) baseado nos dados do arquivo "data/data.go".
 
 2.  Leia os dados presentes em "data/data.go" e os insira no DB utilizando as "models" criadas na etapa anterior.
     - Você pode utilizar a função "seedDatabase" em "main.go" para isso.
 
 3.  Crie uma migration e ajuste seu código para que a informação de Temperatura (Temperature) também seja salva como uma coluna da Medições (Measurements).
-    - Para criar uma migration, crie um novo arquivo ".sql" dentro de "migrations/sql" com a instrução a ser executada.
-    - O nome do arquivo deve seguir o número de versão: v1, v2, v3...
 
 4.  Edite os dados presentes no DB de forma que todas as medições de kWh sejam multiplicadas por 2.
 
