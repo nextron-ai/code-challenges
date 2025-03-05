@@ -3,7 +3,9 @@ package main
 import (
 	// "app/controllers"
 
+	"codechalllenge/database"
 	"fmt"
+	"log"
 
 	// "models"
 	"net/http"
@@ -18,12 +20,12 @@ func main() {
 
 func seedDatabase() {
 	// TODO:
-	// db, err := database.Connect()
-	// if err != nil {
-	// 	log.Fatal("Error:", err)
-	// }
+	db, err := database.Connect()
+	if err != nil {
+		log.Fatal("Error:", err)
+	}
 
-	// defer db.Close()
+	defer db.Close()
 }
 
 func serveApplication() {

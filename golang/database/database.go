@@ -1,6 +1,8 @@
 package database
 
 import (
+	"codechalllenge/models"
+
 	"github.com/jmoiron/sqlx"
 	_ "github.com/lib/pq"
 )
@@ -8,6 +10,12 @@ import (
 func Connect() (*sqlx.DB, error) {
 	dsn := "host=postgres port=5432 user=postgres password=postgres dbname=postgres sslmode=disable"
 	return sqlx.Connect("postgres", dsn)
+}
+
+func InsertPowerPlant(db *sqlx.DB, pp models.PowerPlant) error {
+	query := `INSERT INTO power_plants (col1, col2) VALUES ($1, $2)`
+	_, err := db.Exec(query, col1, col2)
+	return err
 }
 
 //
