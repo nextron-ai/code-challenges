@@ -6,14 +6,8 @@ import (
 )
 
 func Connect() (*sqlx.DB, error) {
-	dsn := "host=localhost port=5436 user=postgres password=postgres dbname=postgres sslmode=disable"
+	dsn := "host=postgres port=5432 user=postgres password=postgres dbname=postgres sslmode=disable"
 	return sqlx.Connect("postgres", dsn)
-}
-
-func InsertExample(db *sqlx.DB, col1 int, col2 string) error {
-	query := `INSERT INTO power_plant (energy_in_kwh, date_time) VALUES ($1, $2)`
-	_, err := db.Exec(query, col1, col2)
-	return err
 }
 
 //
