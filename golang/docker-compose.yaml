@@ -21,4 +21,4 @@ services:
     depends_on:
       - postgres
     volumes:
-      - ./:/app/main
+      - ./:/app
