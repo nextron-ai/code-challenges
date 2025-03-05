@@ -4,13 +4,13 @@
     - Para criar uma migration, crie um novo arquivo ".sql" dentro de "migrations/sql" com a instrução a ser executada.
     - O nome do arquivo deve seguir o número de versão: v1, v2, v3...
 
-1.  Crie as "models" para as Usinas (Power Plants) e Medições (Measurements) baseado nos dados do arquivo "data/data.go".
+2.  Crie as "models" para as Usinas (Power Plants) e Medições (Measurements) baseado nos dados do arquivo "data/data.go".
 
-2.  Leia os dados presentes em "data/data.go" e os insira no DB utilizando as "models" criadas na etapa anterior.
+3.  Leia os dados presentes em "data/data.go" e os insira no DB utilizando as "models" criadas na etapa anterior.
     - Você pode utilizar a função "seedDatabase" em "main.go" para isso.
 
-3.  Crie uma migration e ajuste seu código para que a informação de Temperatura (Temperature) também seja salva como uma coluna da Medições (Measurements).
+4.  Crie uma migration e ajuste seu código para que a informação de Temperatura (Temperature) também seja salva como uma coluna da Medições (Measurements).
 
-4.  Edite os dados presentes no DB de forma que todas as medições de kWh sejam multiplicadas por 2.
+5.  Edite os dados presentes no DB de forma que todas as medições de kWh sejam multiplicadas por 2.
 
-5.  Crie endpoints que retornem dinamicamente a lista de Usinas e de Medições.
+6.  Crie endpoints que retornem dinamicamente a lista de Usinas e de Medições.
