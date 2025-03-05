@@ -1,6 +1,7 @@
 package data
 
-var PowerPlant1 = []map[string]any{
+// Dados de medição da usina 1
+var MeasurementsPowerPlant1 = []map[string]any{
 	{
 		"energy_in_kwh": 20,
 		"date_time":     "2022-01-01 10:20:00",
@@ -19,7 +20,8 @@ var PowerPlant1 = []map[string]any{
 	},
 }
 
-var PowerPlant2 = []map[string]any{
+// Dados de medição da usina 2
+var MeasurementsPowerPlant2 = []map[string]any{
 	{
 		"energy_in_kwh": 10,
 		"date_time":     "2022-01-01 10:20:00",

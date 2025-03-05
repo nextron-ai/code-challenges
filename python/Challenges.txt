@@ -1,4 +1,4 @@
-1. Crie uma lógica para extrair as seguintes informações das imagens presentes na pasta (img1.png e img2.png):
+1.  Crie uma lógica para extrair as seguintes informações das imagens presentes na pasta (img1.png e img2.png):
     - Nome
     - CNPJ
     - Vencimento
