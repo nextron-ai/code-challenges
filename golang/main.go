@@ -5,6 +5,7 @@ import (
 
 	"codechalllenge/database"
 	"fmt"
+	"log"
 
 	// "models"
 	"net/http"
@@ -13,13 +14,28 @@ import (
 )
 
 func main() {
-	// loadDatabase()
-	// serveApplication()
+	//seedDatabase()
+	serveApplication()
 }
 
-func loadDatabase() {
-	database.Connect()
-	// database.Database.AutoMigrate(&models.EnergyData{})
+func seedDatabase() {
+	// TODO: Instruction 2
+	fmt.Println("seedDatabase")
+
+	db, err := database.Connect()
+	if err != nil {
+		log.Fatal("Erro ao conectar no banco:", err)
+	}
+
+	fmt.Println("Connect")
+	err = database.InsertExample(db, 50777, "2025-03-05 12:00:00+00")
+	if err != nil {
+		log.Fatal("erro ao escrever:", err)
+	}
+
+	fmt.Println("InsertExample")
+
+	defer db.Close()
 }
 
 func serveApplication() {
@@ -32,6 +48,6 @@ func serveApplication() {
 		})
 	})
 
-	router.Run(":3000")
+	router.Run(":3001")
 	fmt.Println("Server running on port 3000")
 }

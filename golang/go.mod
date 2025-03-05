@@ -3,8 +3,9 @@ module codechalllenge
 go 1.22.6
 
 require (
-	github.com/gin-gonic/contrib v0.0.0-20250113154928-93b827325fec
 	github.com/gin-gonic/gin v1.10.0
+	github.com/jmoiron/sqlx v1.4.0
+	github.com/lib/pq v1.10.9
 )
 
 require (

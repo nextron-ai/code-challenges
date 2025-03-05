@@ -2,29 +2,23 @@ version: "3.7"
 
 services:
   postgres:
-    image: postgres
-    platform: linux/amd64
+    image: postgres:latest
+    container_name: postgres_code_challenges
     expose:
-      - "5433"
+      - "5436"
     ports:
-      - "5433:5432"
+      - "5436:5432"
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=shared
+    volumes:
+      - ./migrations/sql:/docker-entrypoint-initdb.d
 
-  web-api:
-    image: codechallenge/web-api:latest
-    platform: linux/amd64
-    build:
-      context: .
-      target: dev
-      dockerfile: Dockerfile
-      args:
-        name: "web-api"
+  app:
+    build: .
     ports:
       - 3001:3001
     depends_on:
       - postgres
-    environment:
-      - ENV=local
+    volumes:
+      - ./:/app/main
