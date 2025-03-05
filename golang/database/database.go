@@ -18,10 +18,7 @@ func Connect() (*sqlx.DB, error) {
 // }
 
 // func SelectExample(db *sqlx.DB) ([]Result, error) {
-// 	type Result struct {
-// 		Col1 string `db:"col1"`
-// 		Col2 string `db:"col2"`
-// 	}
+//  // A struct "Result" precisa ter as tags "db" em seus campos
 // 	var results []Result
 // 	err := db.Select(&results, "SELECT col1, col2 FROM example_table")
 // 	return results, err

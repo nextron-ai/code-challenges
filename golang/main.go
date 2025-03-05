@@ -3,30 +3,34 @@ package main
 import (
 	// "app/controllers"
 
+	"codechalllenge/database"
 	"fmt"
+	"log"
 
 	// "models"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"github.com/jmoiron/sqlx"
 )
 
 func main() {
-	seedDatabase()
-	serveApplication()
+	db, err := database.Connect()
+	if err != nil {
+		log.Fatal("Error:", err)
+	}
+
+	defer db.Close()
+
+	seedDatabase(db)
+	serveApplication(db)
 }
 
-func seedDatabase() {
+func seedDatabase(db *sqlx.DB) {
 	// TODO:
-	// db, err := database.Connect()
-	// if err != nil {
-	// 	log.Fatal("Error:", err)
-	// }
-
-	// defer db.Close()
 }
 
-func serveApplication() {
+func serveApplication(db *sqlx.DB) {
 	router := gin.Default()
 	router.SetTrustedProxies(nil)
 
